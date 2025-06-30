@@ -1,0 +1,14 @@
+@use 'colors';
+@use 'mixins' as *;
+
+footer {
+  @include flex(center, center);
+  padding-top: 20px;
+  height: 70px;              
+  background-color: colors.$verdeclaro;
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}

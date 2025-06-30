@@ -1,0 +1,122 @@
+@use 'mixins' as *;
+@use 'colors';
+
+.resumen{
+    @include flex;
+    flex-direction: column;
+    font-weight: 600;
+    h2{
+        margin-bottom: 20px;
+    }
+    .retrato{
+        width: 60%;
+    }
+}
+
+.timeline {
+  padding: 50px 20px;
+  position: relative;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  &-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: colors.$marron; 
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+
+  &-item {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+
+    .year {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .content {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &.left {
+      left: 0;
+
+      &::before {
+        right: -8px;
+      }
+    }
+
+    &.right {
+      left: 50%;
+
+      &::before {
+        left: -8px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: colors.$marron; 
+      border-radius: 50%;
+      top: 20px;
+      z-index: 1;
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media (max-width: 768px) {
+  .resumen {
+    .retrato {
+      width: 90%;
+    }
+  }
+
+  .timeline {
+    &-item {
+      width: 100%;
+      left: 0 !important;
+      padding-left: 40px;
+      padding-right: 40px;
+
+      &.right,
+      &.left {
+        text-align: left;
+      }
+      &.right::before{
+        background-color: colors.$verdefuerte; 
+        left: 12px;
+      }
+
+      &::before{
+        left: 12px;
+      }
+    }
+
+    &-container::after {
+      left: 20px;
+    }
+  }
+}

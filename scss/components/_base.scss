@@ -1,0 +1,19 @@
+@use 'colors';
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: colors.$beige !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+main {
+  margin-top: 60px;
+  flex: 1;
+}

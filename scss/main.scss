@@ -1,0 +1,12 @@
+
+
+/* Importamos las cosas para llevar el css */
+@use 'components/base' as *;
+@use 'components/inicio' as *;
+@use 'components/navbar' as *;
+@use 'components/footer';
+@use 'components/historia';
+@use 'components/mixins' ;
+@use 'components/colors';
+@use 'components/variedades';
+@use 'components/preparacion'
